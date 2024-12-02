@@ -3,21 +3,26 @@
 public class Main {
 
     public static void main(String[] args) {
-        // write your code here
-        paladin main = new paladin("Dogecoin");
-        wizard sub = new wizard("ETH");
-        ring Rame = new ring();
-        necklace Nman = new necklace();
-        Rame.Skill();
-        main.Equipring(Rame);
-        Nman.Skill();
-        main.Equipnecklace(Nman);
-        main.Show_detail();
-        main.Attacked(sub);
-        Nman.Skill();
-        sub.Equipnecklace(Nman);
-        sub.Show_detail();
-        sub.Attacked(main);
+        // Create characters
+        RPGCharacter warrior = new paladin("Conan", 100, 50);
+        RPGCharacter mage = new wizard("Merlin", 80, 100);
 
+        // Create accessories
+        accessory necklace = new necklace();
+        accessory ring = new ring();
+
+        // Simulate interactions
+        warrior.attack(mage);
+        mage.attack(warrior);
+
+        warrior.useMana(10);
+        mage.useMana(20);
+
+        necklace.applyEffect(warrior);
+        ring.applyEffect(warrior);
+
+        System.out.println("\nStatus:");
+        warrior.showStatus();
+        mage.showStatus();
     }
 }

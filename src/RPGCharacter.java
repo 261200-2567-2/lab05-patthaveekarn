@@ -1,7 +1,11 @@
 public interface RPGCharacter {
-    void Attacked(paladin names);
-    void Attacked(wizard names);
-    void Show_detail();
-    void Equipring(ring ring);
-    void Equipnecklace(necklace necklace);
+    String getName();
+    int getHealth();
+    int getMana();
+    void attack(RPGCharacter target);
+    void useMana(int amount);
+    void recoveyHealth(int amount);
+    void recoverMana(int amount);
+    void takeDamage(int damage);
+    void showStatus();
 }

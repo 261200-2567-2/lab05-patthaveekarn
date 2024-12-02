@@ -1,15 +1,21 @@
-public class necklace implements accessary{
-    protected int Atk = 150;
-    protected int Def = 300;
-    protected String Skill;
+public class necklace implements accessory {
+    private String accessoryName = "necklace";
 
-    {
-        Skill = "Def *2";
+    @Override
+    public String getAccessoryName() {
+        return accessoryName;
     }
 
-    public void Skill(){
-        this.Def *=2;
+    @Override
+    public void applyEffect(RPGCharacter character) {
+        System.out.println(accessoryName + " heals " + character.getName());
+        character.recoveyHealth(50); // Recover mana as an effect
     }
-    necklace(){
+
+    @Override
+    public void useSkill(RPGCharacter target) {
+        System.out.println("necklace has no skill to use!");
     }
 }
+
+

@@ -1,12 +1,21 @@
-public class ring implements accessary{
-    protected int Hp = 10;
-    protected int Atk = 20;
-    protected int Def = 10;
-    protected String Skills = "Atk * 2";
+public class ring implements accessory {
+    private String accessoryName = "ring";
 
-    public void Skill(){
-        this.Atk *=2;
+    @Override
+    public String getAccessoryName() {
+        return accessoryName;
     }
-    ring(){
+
+    @Override
+    public void applyEffect(RPGCharacter character) {
+        System.out.println(accessoryName + " recover " + character.getName());
+        character.recoverMana(20); // Recover mana as an effect
+    }
+
+    @Override
+    public void useSkill(RPGCharacter target) {
+        System.out.println("ring has no skill to use!");
     }
 }
+
+
